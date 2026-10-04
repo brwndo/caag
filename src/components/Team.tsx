@@ -15,15 +15,24 @@ export function Team() {
           </p>
         </div>
 
-        <div className="reveal mt-12 overflow-hidden rounded-[20px]">
-          <img
-            src={assetPath("/images/client-family.jpg")}
-            alt="An agricultural operation represented by the firm"
-            className="h-[min(70vh,720px)] w-full object-cover"
-          />
+        <div className="reveal-stagger mt-12 grid gap-3 md:grid-cols-12">
+          <figure className="overflow-hidden rounded-[20px] md:col-span-8">
+            <img
+              src={assetPath("/images/foothill-aerial.jpg")}
+              alt="Orchard and vineyard rows below the California foothills"
+              className="image-zoom-in h-[320px] w-full object-cover object-[center_42%] md:h-[min(70vh,560px)]"
+            />
+          </figure>
+          <figure className="overflow-hidden rounded-[20px] md:col-span-4">
+            <img
+              src={assetPath("/images/citrus-close.jpg")}
+              alt="Close view of citrus fruit on the branch"
+              className="image-zoom-in h-[320px] w-full object-cover md:h-[min(70vh,560px)]"
+            />
+          </figure>
         </div>
 
-        <ul className="reveal-stagger mt-0 grid border-t border-navy/10 md:grid-cols-3">
+        <ul className="reveal-stagger mt-10 grid border-t border-navy/10 md:grid-cols-3">
           {team.map((person) => (
             <li
               key={person.name}

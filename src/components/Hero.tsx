@@ -7,11 +7,13 @@ export function Hero() {
       className="sticky top-0 z-0 flex min-h-svh flex-col bg-navy-deep pt-[76px]"
     >
       <div className="relative mx-3 mb-3 flex min-h-[calc(100svh-88px)] flex-1 overflow-hidden rounded-[24px] bg-navy-deep">
-        <img
-          src={assetPath("/images/hero.jpg")}
-          alt="Aerial view of a canal running through California farmland"
-          className="hero-media absolute inset-0 h-full w-full object-cover"
-        />
+        <div className="hero-media-parallax absolute inset-x-0 -top-[16%] h-[140%] will-change-transform">
+          <img
+            src={assetPath("/images/hero.jpg")}
+            alt="Aerial view of a canal running through California farmland"
+            className="hero-media h-full w-full object-cover"
+          />
+        </div>
         <div className="hero-scrim pointer-events-none absolute inset-0 bg-linear-to-b from-scrim/55 via-scrim/28 to-scrim/72" />
 
         <div className="relative z-10 flex w-full max-w-[1100px] flex-col justify-center px-6 py-16 md:px-11 md:py-24">

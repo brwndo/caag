@@ -14,7 +14,7 @@ export default function Home() {
       <MotionRoot />
       <Header />
       <main>
-        <div>
+        <div id="hero-stage">
           <Hero />
           <div className="relative z-10">
             <LogoMarquee />

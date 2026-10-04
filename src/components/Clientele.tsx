@@ -6,6 +6,7 @@ import { audiences } from "@/lib/content";
 export function Clientele() {
   const [active, setActive] = useState(audiences[0].id);
   const current = audiences.find((a) => a.id === active) ?? audiences[0];
+  const href = current.href || undefined;
 
   return (
     <section id="clientele" className="relative z-10 bg-navy-deep text-cream">
@@ -44,29 +45,40 @@ export function Clientele() {
             })}
           </div>
 
-          <div className="reveal overflow-hidden rounded-[20px] bg-navy">
+          <a
+            href={href}
+            aria-disabled={href ? undefined : true}
+            onClick={(event) => {
+              if (!href) event.preventDefault();
+            }}
+            className="group reveal block cursor-pointer overflow-hidden rounded-[20px] bg-navy focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-cream"
+            aria-label={`View page: ${current.label}`}
+          >
             <div className="relative aspect-[16/10] overflow-hidden">
               <img
                 key={current.id}
                 src={current.image}
                 alt=""
-                className="tab-image-zoom h-full w-full object-cover transition-transform duration-[400ms] ease-out hover:scale-[1.04]"
+                className="tab-image-zoom h-full w-full object-cover transition-transform duration-[400ms] ease-out group-hover:scale-[1.04]"
               />
             </div>
-            <div className="space-y-4 p-6 md:p-8">
+            <div className="p-6 md:p-8">
               <h3 className="font-serif text-[28px] font-semibold text-cream">
                 {current.label}
               </h3>
-              <p className="font-sans text-[16px] leading-[1.55] text-cream/80">
+              <p className="mt-4 font-sans text-[16px] leading-[1.55] text-cream/80">
                 {current.lead}
               </p>
               {current.detail ? (
-                <p className="font-sans text-[16px] leading-[1.55] text-cream/65">
+                <p className="mt-4 font-sans text-[16px] leading-[1.55] text-cream/65">
                   {current.detail}
                 </p>
               ) : null}
+              <span className="mt-6 inline-flex h-[41px] items-center rounded-full border border-cream/50 px-5 font-sans text-[12.5px] font-medium uppercase tracking-[0.08em] text-cream transition-colors duration-[400ms] ease-out group-hover:border-cream group-hover:bg-cream group-hover:text-navy">
+                View Page
+              </span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>

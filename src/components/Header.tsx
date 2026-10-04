@@ -16,6 +16,13 @@ export function Header() {
 
     let lastY = window.scrollY;
     let ticking = false;
+    let hideTimer = 0;
+
+    const cancelHide = () => {
+      if (!hideTimer) return;
+      window.clearTimeout(hideTimer);
+      hideTimer = 0;
+    };
 
     const onScroll = () => {
       if (ticking) return;
@@ -25,10 +32,17 @@ export function Header() {
         const delta = y - lastY;
 
         if (y < 76) {
+          cancelHide();
           setHidden(false);
         } else if (delta > 6) {
-          setHidden(true);
+          if (!hideTimer) {
+            hideTimer = window.setTimeout(() => {
+              setHidden(true);
+              hideTimer = 0;
+            }, 220);
+          }
         } else if (delta < -6) {
+          cancelHide();
           setHidden(false);
         }
 
@@ -38,13 +52,18 @@ export function Header() {
     };
 
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      cancelHide();
+      window.removeEventListener("scroll", onScroll);
+    };
   }, [open]);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-navy-deep transition-transform duration-300 ease-out motion-reduce:transition-none ${
-        hidden ? "pointer-events-none -translate-y-full" : "translate-y-0"
+      className={`fixed inset-x-0 top-0 z-50 bg-navy-deep transition-transform ease-out motion-reduce:transition-none ${
+        hidden
+          ? "pointer-events-none -translate-y-full duration-500"
+          : "translate-y-0 duration-300"
       }`}
     >
       <div className="mx-auto flex h-[76px] max-w-[1440px] items-center justify-between gap-6 px-4 md:px-8">

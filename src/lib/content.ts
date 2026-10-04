@@ -57,7 +57,7 @@ export const assets = [
   {
     title: "Vineyards",
     body: "Wine grape and table grape acreage.",
-    image: assetPath("/images/asset-vineyard.png"),
+    image: assetPath("/images/vineyard-grapes.jpg"),
     className: "md:col-span-2 min-h-[240px]",
   },
   {
@@ -85,6 +85,7 @@ export const audiences = [
     id: "institutional",
     label: "Institutional Investors",
     image: assetPath("/images/client-institutional.jpg"),
+    href: "",
     lead: "Direct representation for farming vehicles, real estate investment trusts, and the institutional capital behind them, carried out with the documentation discipline that work requires.",
     detail:
       "Parcel, water, soil, and crop records are assembled before an offering goes out, so a committee can underwrite from the first look.",
@@ -93,6 +94,7 @@ export const audiences = [
     id: "offices",
     label: "Family Offices",
     image: assetPath("/images/client-offices.jpg"),
+    href: "",
     lead: "Long-horizon representation for family offices building, holding, or trimming agricultural exposure, working inside existing mandates and governance.",
     detail:
       "Positions are built or reduced on the family’s timeline rather than a listing calendar.",
@@ -101,6 +103,7 @@ export const audiences = [
     id: "operators",
     label: "Vertically Integrated Operators",
     image: assetPath("/images/client-operators.jpg"),
+    href: "",
     lead: "Representation for growers, packers, shippers, and processors who manage land as one part of a larger enterprise, structured around the operation as a whole.",
     detail:
       "Land decisions are weighed against processing capacity, labor, and the supply commitments already in place.",
@@ -109,6 +112,7 @@ export const audiences = [
     id: "family",
     label: "Family Farmers",
     image: assetPath("/images/client-family.jpg"),
+    href: "",
     lead: "Representation for the families who own and work farmland, often across generations. Every engagement is handled directly and with discretion.",
     detail:
       "Terms are explained in plain language before anything is signed, and the same broker stays on the file through closing.",
@@ -117,6 +121,7 @@ export const audiences = [
     id: "hnw",
     label: "High and Ultra-High Net Worth",
     image: assetPath("/images/client-hnw.jpg"),
+    href: "",
     lead: "Principals acquiring legacy holdings and premier estates, represented with discretion and the market knowledge to find what is not listed.",
     detail: "",
   },

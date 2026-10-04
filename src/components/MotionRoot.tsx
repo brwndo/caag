@@ -11,6 +11,21 @@ export function MotionRoot() {
     const media = gsap.matchMedia();
 
     media.add("(prefers-reduced-motion: no-preference)", () => {
+      gsap.fromTo(
+        ".hero-media-parallax",
+        { yPercent: 0 },
+        {
+          yPercent: -12,
+          ease: "none",
+          scrollTrigger: {
+            trigger: "#hero-stage",
+            start: "top top",
+            end: "bottom top",
+            scrub: 0.6,
+          },
+        },
+      );
+
       gsap.to(".hero-scrim", {
         opacity: 1,
         ease: "none",
@@ -20,6 +35,15 @@ export function MotionRoot() {
           end: "top 30%",
           scrub: true,
         },
+      });
+
+      gsap.utils.toArray<HTMLElement>(".image-zoom-in").forEach((el) => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: "top 90%",
+          once: true,
+          onEnter: () => el.classList.add("is-inview"),
+        });
       });
 
       const fade = {
