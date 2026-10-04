@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-cormorant), "Times New Roman", serif;
+
+  --color-navy: #1b2a3a;
+  --color-navy-deep: #14202c;
+  --color-ink: #1e2a33;
+  --color-cream: #f1eee7;
+  --color-muted: #5f6c78;
+  --color-copper: #d57a23;
+  --color-scrim: #0f1925;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes tab-image-zoom {
+  from {
+    transform: scale(1.04);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.hero-media {
+  animation: kenburns 28s ease-in-out infinite alternate;
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+}
+
+.tab-image-zoom {
+  animation: tab-image-zoom 400ms ease-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-media,
+  .marquee-track,
+  .tab-image-zoom {
+    animation: none;
+  }
+}
