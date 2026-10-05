@@ -24,15 +24,6 @@ body {
   overflow-x: hidden;
 }
 
-@keyframes kenburns {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(1.08);
-  }
-}
-
 @keyframes marquee {
   from {
     transform: translateX(0);
@@ -51,10 +42,6 @@ body {
   }
 }
 
-.hero-media {
-  animation: kenburns 28s ease-in-out infinite alternate;
-}
-
 .marquee-track {
   animation: marquee 42s linear infinite;
 }
@@ -69,7 +56,6 @@ body {
     scroll-behavior: auto;
   }
 
-  .hero-media,
   .marquee-track,
   .image-zoom-in,
   .tab-image-zoom {

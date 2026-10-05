@@ -1,22 +1,16 @@
-import { assetPath } from "@/lib/asset";
+import { HeroMedia } from "./HeroMedia";
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="sticky top-0 z-0 flex min-h-svh flex-col bg-navy-deep pt-[76px]"
+      className="sticky top-0 z-0 min-h-svh bg-navy-deep"
     >
-      <div className="relative mx-3 mb-3 flex min-h-[calc(100svh-88px)] flex-1 overflow-hidden rounded-[24px] bg-navy-deep">
-        <div className="hero-media-parallax absolute inset-x-0 -top-[16%] h-[140%] will-change-transform">
-          <img
-            src={assetPath("/images/hero.jpg")}
-            alt="Aerial view of a canal running through California farmland"
-            className="hero-media h-full w-full object-cover"
-          />
-        </div>
+      <div className="relative flex min-h-svh overflow-hidden bg-navy-deep">
+        <HeroMedia />
         <div className="hero-scrim pointer-events-none absolute inset-0 bg-linear-to-b from-scrim/55 via-scrim/28 to-scrim/72" />
 
-        <div className="relative z-10 flex w-full max-w-[1100px] flex-col justify-center px-6 py-16 md:px-11 md:py-24">
+        <div className="relative z-10 flex w-full max-w-[1100px] flex-col justify-center px-6 pb-16 pt-[calc(76px+4rem)] md:px-11 md:pb-24 md:pt-[calc(76px+6rem)]">
           <p className="reveal font-sans text-[12.5px] font-medium uppercase tracking-[0.09em] text-white">
             Agricultural Real Estate Brokerage
           </p>

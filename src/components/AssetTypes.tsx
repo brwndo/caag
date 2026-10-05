@@ -27,7 +27,7 @@ export function AssetTypes() {
               />
               <div className="absolute inset-0 bg-linear-to-t from-scrim/80 via-scrim/15 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-5 md:p-6">
-                <h3 className="font-serif text-[26px] font-semibold text-white">
+                <h3 className="font-serif text-[26px] font-semibold leading-[0.95] tracking-[-0.015em] text-white">
                   {tile.title}
                 </h3>
                 <p className="mt-1 max-w-[380px] font-sans text-[15px] leading-snug text-white/85">
